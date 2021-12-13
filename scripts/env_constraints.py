@@ -12,7 +12,7 @@ class Drone1DEnv():
         self.drone = drone
         self.marker = marker
         self.phi_high = np.deg2rad(90)
-        self.phi_dot_high = np.deg2rad(200)
+        self.phi_dot_high = np.deg2rad(200) # 300
         self.phi_des = phi_des
         self.phi_dot_des = 0.0
         self.action_high = 0.05 #(N-m)
@@ -42,7 +42,7 @@ class Drone1DEnv():
                 reward = 100.0
                 print('----desired point achieved----')
         else:            
-            reward = -(10*abs(phi) + 0.5*abs(phi_dot) + 0.3*abs(action))
+            reward = -(10*abs(phi) + 0.5*abs(phi_dot) + 0.3*abs(action)) # double them
 
         return float(reward)
         
